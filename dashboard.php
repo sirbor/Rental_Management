@@ -39,13 +39,29 @@ $properties = mysqli_query($conn, $query);
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <a href="tenant.php"><img src="https://www.nicepng.com/png/detail/97-974743_real-estate-logo-png.png"  alt="Your logo"></a>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a href="#dashboard-land">Dashboard</a></li>
+                <li><a href="#Tenant-land">Tenant</a></li>
+                <li><a href="#payment-land">Payment</a></li>
+                <li><a href="#Maintenance-land">Maintenance</a></li>
+                <li><a href="#Lease-Land">Lease</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="dashboard-box">
     <div class="dashboard-header">
         <h2>Welcome, <?php echo ucfirst($username); ?></h2>
         <a href="logout.php">Logout</a>
     </div>
     <div class="dashboard-content">
-        <h3>Property</h3>
+        <h3 id="dashboard-land">Property</h3>
         <table>
             <tr>
                 <th>PropertyID</th>
@@ -66,7 +82,7 @@ $properties = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Tenants</h3>
+        <h3 id="Tenant-land">Tenants</h3>
         <table>
             <tr>
                 <th>TenantID</th>
@@ -85,7 +101,7 @@ $properties = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Leases</h3>
+        <h3 id="Lease-Land">Lease</h3>
         <table>
             <tr>
                 <th>LeaseId</th>
@@ -102,7 +118,7 @@ $properties = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Payment</h3>
+        <h3 id="payment-land">Payment</h3>
         <table>
             <tr>
                 <th>PaymentID</th>
@@ -117,7 +133,7 @@ $properties = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Maintenance</h3>
+        <h3 id="Maintenance-land">Maintenance</h3>
         <table>
             <tr>
                 <th>MaintenanceID</th>

@@ -11,7 +11,7 @@ $cost = $_POST['cost'];
 $sql = "INSERT INTO Maintenance (Description,Date, Cost) VALUES ('$description', '$date',$cost)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Maintenance recorded successfully";
+    header('location: tenant.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

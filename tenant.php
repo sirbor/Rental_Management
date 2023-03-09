@@ -39,15 +39,34 @@ $leases = mysqli_query($conn, $query);
 <head>
     <title>Tenant Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
+<nav>
+    <div class="nav-container">
+        <div class="logo-container">
+            <a href="dashboard.php"><img src="https://www.nicepng.com/png/detail/97-974743_real-estate-logo-png.png" alt="Your logo"></a>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a href="#update-tenant-details">Dashboard</a></li>
+                <li><a href="#make-payment">Payment</a></li>
+                <li><a href="#submit-maintenance-report">Maintenance</a></li>
+                <li><a href="#submit-lease-details">Lease</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
 <div class="dashboard-box">
     <div class="dashboard-header">
         <h2>Welcome, <?php echo ucfirst($username); ?></h2>
         <a href="logout.php">Logout</a>
     </div>
     <div class="dashboard-content">
-        <h3>Tenant Details</h3>
+        <h3 id="tenant-details">Tenant Details</h3>
+
         <table>
             <tr>
                 <th>First Name</th>
@@ -64,7 +83,7 @@ $leases = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Update Tenant Details</h3>
+        <h3 id="update-tenant-details">Update Tenant Details</h3>
         <form method="post" action="update_tenant.php">
             <label>First Name:</label>
             <label>
@@ -89,7 +108,8 @@ $leases = mysqli_query($conn, $query);
             <input type="submit" value="Submit">
         </form>
 
-        <h3>Payment Reports</h3>
+        <h3 id="payment-reports">Payment Reports</h3>
+
         <table>
             <tr>
                 <th>Date</th>
@@ -102,7 +122,8 @@ $leases = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Make Payment</h3>
+        <h3 id="make-payment">Make Payment</h3>
+
         <form method="post" action="make_payment.php">
             <label>Date:</label>
             <label>
@@ -114,7 +135,8 @@ $leases = mysqli_query($conn, $query);
             </label><br>
             <input type="submit" value="Submit">
         </form>
-        <h3>Maintenance Reports</h3>
+        <h3 id="maintenance-reports">Maintenance Reports</h3>
+
         <table>
             <tr>
                 <th>Date</th>
@@ -129,7 +151,8 @@ $leases = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Submit Maintenance Report</h3>
+        <h3 id="submit-maintenance-report">Submit Maintenance Report</h3>
+
         <form method="post" action="submit_report.php">
             <label>Description:</label>
             <label>
@@ -145,7 +168,8 @@ $leases = mysqli_query($conn, $query);
             </label><br>
             <input type="submit" value="Submit">
         </form>
-        <h3>Lease Details</h3>
+        <h3 id="lease-details">Lease Details</h3>
+
         <table>
             <tr>
                 <th>Start Date</th>
@@ -160,7 +184,7 @@ $leases = mysqli_query($conn, $query);
                 </tr>
             <?php } ?>
         </table>
-        <h3>Update Lease Details</h3>
+        <h3 id="submit-lease-details">Update Lease Details</h3>
         <form method="post" action="update_lease.php">
             <label>StartDate:</label>
             <label>

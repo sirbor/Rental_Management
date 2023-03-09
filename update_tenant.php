@@ -12,9 +12,13 @@ $LastName = $_POST['LastName'];
 $Email = $_POST['Email'];
 $Phone= $_POST['Phone'];
 
-$query = "INSERT INTO Tenant(FirstName, LastName, Email, Phone) VALUES ('$FirstName', '$LastName', '$Email', '$Phone')";
-mysqli_query($conn, $query);
+$query = "INSERT INTO Tenant(FirstName, LastName, Email, Phone) VALUES ('$FirstName', '$LastName', '$Email', '$Phone') WHERE User.username='{$_SESSION['username']}'";
+if (mysqli_query($conn, $sql)) {
+    header('location: tenant.php');
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
-header('location: tenant.php');
-exit();
+// Close database connection
+mysqli_close($conn);
 ?>

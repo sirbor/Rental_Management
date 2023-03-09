@@ -12,7 +12,7 @@ $Phone= $_POST['Phone'];
 $sql = "INSERT INTO Tenant (FirstName, LastName, Email, Phone) VALUES ('$FirstName','$LastName','$Email','$Phone')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Tenant details recorded successfully";
+    header('location: tenant.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
